@@ -86,7 +86,7 @@ struct SymbolTableStruct
   void (DNLOADAPIENTRY *glVertexAttribPointer)(GLuint, GLint, GLenum, GLboolean, GLsizei, const GLvoid*);
   void (DNLOADAPIENTRY *glBindTexture)(GLenum, GLuint);
   void (DNLOADAPIENTRY *glLinkProgram)(GLuint);
-  void (DNLOADAPIENTRY *glShaderSource)(GLuint, GLsizei, const GLchar**, const GLint*);
+  void (DNLOADAPIENTRY *glShaderSource)(GLuint, GLsizei, const GLchar*const*, const GLint*);
   GLint (DNLOADAPIENTRY *glGetUniformLocation)(GLuint, const GLchar*);
   void (DNLOADAPIENTRY *glRects)(GLshort, GLshort, GLshort, GLshort);
   SDL_Surface* (*SDL_SetVideoMode)(int, int, int, Uint32);
@@ -108,8 +108,7 @@ struct SymbolTableStruct
   void (DNLOADAPIENTRY *glTexImage3D)(GLenum, GLint, GLint, GLsizei, GLsizei, GLsizei, GLint, GLenum, GLenum, const GLvoid*);
   void (DNLOADAPIENTRY *glUniformMatrix3fv)(GLint, GLsizei, GLboolean, const GLfloat*);
   void (DNLOADAPIENTRY *glViewport)(GLint, GLint, GLsizei, GLsizei);
-  void (DNLOADAPIENTRY *glUniform3f)(GLint, GLfloat, GLfloat, GLfloat);
-  void (DNLOADAPIENTRY *glTexImage2DMultisample)(GLenum, GLsizei, GLint, GLsizei, GLsizei, GLboolean);
+  void (DNLOADAPIENTRY *glTexImage2DMultisample)(GLenum, GLsizei, GLenum, GLsizei, GLsizei, GLboolean);
   void (*SDL_GL_SwapBuffers)(void);
   void (DNLOADAPIENTRY *glGenFramebuffers)(GLsizei, GLuint*);
   int (*SDL_Init)(Uint32);
@@ -128,51 +127,50 @@ struct SymbolTableStruct
 /** Instance of the symbol table. */
 static struct SymbolTableStruct g_sym =
 {
-  (int (*)(void))0xe83af065L,
-  (void (DNLOADAPIENTRY *)(GLuint))0xcc55bb62L,
-  (void (DNLOADAPIENTRY *)(GLenum, GLint, GLint, GLsizei, GLsizei, GLint, GLenum, GLenum, const GLvoid*))0xa259532bL,
+  (int (*)(void))0xe83af065,
+  (void (DNLOADAPIENTRY *)(GLuint))0xcc55bb62,
+  (void (DNLOADAPIENTRY *)(GLenum, GLint, GLint, GLsizei, GLsizei, GLint, GLenum, GLenum, const GLvoid*))0xa259532b,
   (void (DNLOADAPIENTRY *)(GLenum))0xb5f7c43,
-  (void (DNLOADAPIENTRY *)(GLsizei, GLuint*))0x9bdd4fa3L,
-  (float (*)(float))0x9ec2e83fL,
+  (void (DNLOADAPIENTRY *)(GLsizei, GLuint*))0x9bdd4fa3,
+  (float (*)(float))0x9ec2e83f,
   (void (*)(unsigned int))0x6b699dd8,
-  (void (DNLOADAPIENTRY *)(GLuint, GLint, GLenum, GLboolean, GLsizei, const GLvoid*))0xc443174aL,
-  (void (DNLOADAPIENTRY *)(GLenum, GLuint))0x95e43fb9L,
+  (void (DNLOADAPIENTRY *)(GLuint, GLint, GLenum, GLboolean, GLsizei, const GLvoid*))0xc443174a,
+  (void (DNLOADAPIENTRY *)(GLenum, GLuint))0x95e43fb9,
   (void (DNLOADAPIENTRY *)(GLuint))0x133a35c5,
-  (void (DNLOADAPIENTRY *)(GLuint, GLsizei, const GLchar**, const GLint*))0xc609c385L,
+  (void (DNLOADAPIENTRY *)(GLuint, GLsizei, const GLchar*const*, const GLint*))0xc609c385,
   (GLint (DNLOADAPIENTRY *)(GLuint, const GLchar*))0x25c12218,
-  (void (DNLOADAPIENTRY *)(GLshort, GLshort, GLshort, GLshort))0xd419e20aL,
+  (void (DNLOADAPIENTRY *)(GLshort, GLshort, GLshort, GLshort))0xd419e20a,
   (SDL_Surface* (*)(int, int, int, Uint32))0x39b85060,
-  (void (DNLOADAPIENTRY *)(GLenum, GLuint))0xa0fdff6bL,
-  (void (DNLOADAPIENTRY *)(GLenum, GLint, GLsizei))0xcb871c63L,
-  (void (DNLOADAPIENTRY *)(GLclampf, GLclampf, GLclampf, GLclampf))0x8c118fbbL,
-  (int (*)(int))0xb88bf697L,
+  (void (DNLOADAPIENTRY *)(GLenum, GLuint))0xa0fdff6b,
+  (void (DNLOADAPIENTRY *)(GLenum, GLint, GLsizei))0xcb871c63,
+  (void (DNLOADAPIENTRY *)(GLclampf, GLclampf, GLclampf, GLclampf))0x8c118fbb,
+  (int (*)(int))0xb88bf697,
   (void (DNLOADAPIENTRY *)(GLint, GLsizei, const GLfloat*))0x22b26935,
   (int (*)(SDL_Event*))0x64949d97,
   (void (DNLOADAPIENTRY *)(GLbitfield))0x1fd92088,
-  (void (DNLOADAPIENTRY *)(GLenum))0xd7d4d450L,
-  (void (DNLOADAPIENTRY *)(GLuint))0xe9e99723L,
-  (GLint (DNLOADAPIENTRY *)(GLuint, const GLchar*))0xceb27dd0L,
+  (void (DNLOADAPIENTRY *)(GLenum))0xd7d4d450,
+  (void (DNLOADAPIENTRY *)(GLuint))0xe9e99723,
+  (GLint (DNLOADAPIENTRY *)(GLuint, const GLchar*))0xceb27dd0,
   (void (DNLOADAPIENTRY *)(GLint, GLsizei, const GLfloat*))0x223459b4,
   (void (DNLOADAPIENTRY *)(GLuint, GLuint))0x30b3cfcf,
-  (void (DNLOADAPIENTRY *)(GLuint))0xc5165dd3L,
+  (void (DNLOADAPIENTRY *)(GLuint))0xc5165dd3,
   (void (DNLOADAPIENTRY *)(GLenum, GLenum, GLenum, GLuint, GLint))0x18781f65,
   (GLuint (DNLOADAPIENTRY *)(void))0x78721c3,
-  (void (DNLOADAPIENTRY *)(GLenum, GLint, GLint, GLsizei, GLsizei, GLsizei, GLint, GLenum, GLenum, const GLvoid*))0xa25a536aL,
+  (void (DNLOADAPIENTRY *)(GLenum, GLint, GLint, GLsizei, GLsizei, GLsizei, GLint, GLenum, GLenum, const GLvoid*))0xa25a536a,
   (void (DNLOADAPIENTRY *)(GLint, GLsizei, GLboolean, const GLfloat*))0x50a8d153,
-  (void (DNLOADAPIENTRY *)(GLint, GLint, GLsizei, GLsizei))0xecca892bL,
-  (void (DNLOADAPIENTRY *)(GLint, GLfloat, GLfloat, GLfloat))0x4feb7742,
-  (void (DNLOADAPIENTRY *)(GLenum, GLsizei, GLint, GLsizei, GLsizei, GLboolean))0x732f22f8,
-  (void (*)(void))0xda43e6eaL,
-  (void (DNLOADAPIENTRY *)(GLsizei, GLuint*))0xb1503371L,
+  (void (DNLOADAPIENTRY *)(GLint, GLint, GLsizei, GLsizei))0xecca892b,
+  (void (DNLOADAPIENTRY *)(GLenum, GLsizei, GLenum, GLsizei, GLsizei, GLboolean))0x732f22f8,
+  (void (*)(void))0xda43e6ea,
+  (void (DNLOADAPIENTRY *)(GLsizei, GLuint*))0xb1503371,
   (int (*)(Uint32))0x70d6574,
-  (void (DNLOADAPIENTRY *)(GLenum, GLenum, GLint))0xdefef0c2L,
+  (void (DNLOADAPIENTRY *)(GLenum, GLenum, GLint))0xdefef0c2,
   (void (*)(int))0x29f14a4,
   (void (DNLOADAPIENTRY *)(GLint, GLfloat))0x4fe976c4,
   (void (*)(void))0x7eb657f3,
-  (float (*)(float))0xf1ce8ee0L,
+  (float (*)(float))0xf1ce8ee0,
   (int (*)(SDL_AudioSpec*, SDL_AudioSpec*))0x46fd70c8,
   (GLuint (DNLOADAPIENTRY *)(GLenum))0x6b4ffac6,
-  (float (*)(float, float))0x921b2a2eL,
+  (float (*)(float, float))0x921b2a2e,
   (void (DNLOADAPIENTRY *)(GLint, GLint))0x4fe976c7,
   NULL
 };
@@ -232,7 +230,6 @@ static void init(int screen_w, int screen_h, unsigned flag_fullscreen)
   g_sym.glTexImage3D = glTexImage3D;
   g_sym.glUniformMatrix3fv = glUniformMatrix3fv;
   g_sym.glViewport = glViewport;
-  g_sym.glUniform3f = glUniform3f;
   g_sym.glTexImage2DMultisample = glTexImage2DMultisample;
   g_sym.SDL_GL_SwapBuffers = SDL_GL_SwapBuffers;
   g_sym.glGenFramebuffers = glGenFramebuffers;
